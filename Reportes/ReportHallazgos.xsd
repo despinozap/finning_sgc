@@ -1,0 +1,230 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReportHallazgos" targetNamespace="http://tempuri.org/ReportHallazgos.xsd" xmlns:mstns="http://tempuri.org/ReportHallazgos.xsd" xmlns="http://tempuri.org/ReportHallazgos.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="NCCSANConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NCCSANConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.NCCSANConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EventoTableAdapter" GeneratorDataComponentClassName="EventoTableAdapter" Name="Evento" UserDataComponentName="EventoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NCCSANConnectionString (Web.config)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+		e.codigo,
+		e.work_order,
+		e.fecha_ingreso,
+		e.nombre_area,
+		e.nombre_subarea,
+		e.nombre_tipoequipo,
+		e.modelo_equipo,
+		e.serie_equipo,
+		e.nombre_clasificacion,
+		e.nombre_subclasificacion,
+		e.nombre_sistema,
+		e.nombre_subsistema,
+		e.nombre_componente,
+		e.serie_componente,
+		e.agente_corrector,
+		e.probabilidad,
+		e.consecuencia,
+		e.irc,
+		e.criticidad,
+		e.detalle,
+		a.contenido
+FROM
+		Evento e,
+		EventoArchivo ea,
+		Archivo a
+WHERE
+		(ea.codigo_evento = e.codigo) AND
+		(a.id = ea.id_archivo) AND
+		(e.irc &lt; 10) AND
+		(e.nombre_fuente &lt;&gt; 'Reclamo de Cliente') AND
+		(
+			(e.estado &lt;&gt; 'Cerrado') AND
+			(e.estado &lt;&gt; 'Verificación pendiente')
+		)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="fecha_ingreso" DataSetColumn="fecha_ingreso" />
+              <Mapping SourceColumn="nombre_area" DataSetColumn="nombre_area" />
+              <Mapping SourceColumn="nombre_subarea" DataSetColumn="nombre_subarea" />
+              <Mapping SourceColumn="nombre_tipoequipo" DataSetColumn="nombre_tipoequipo" />
+              <Mapping SourceColumn="modelo_equipo" DataSetColumn="modelo_equipo" />
+              <Mapping SourceColumn="serie_equipo" DataSetColumn="serie_equipo" />
+              <Mapping SourceColumn="nombre_clasificacion" DataSetColumn="nombre_clasificacion" />
+              <Mapping SourceColumn="nombre_subclasificacion" DataSetColumn="nombre_subclasificacion" />
+              <Mapping SourceColumn="nombre_sistema" DataSetColumn="nombre_sistema" />
+              <Mapping SourceColumn="nombre_subsistema" DataSetColumn="nombre_subsistema" />
+              <Mapping SourceColumn="nombre_componente" DataSetColumn="nombre_componente" />
+              <Mapping SourceColumn="serie_componente" DataSetColumn="serie_componente" />
+              <Mapping SourceColumn="agente_corrector" DataSetColumn="agente_corrector" />
+              <Mapping SourceColumn="probabilidad" DataSetColumn="probabilidad" />
+              <Mapping SourceColumn="consecuencia" DataSetColumn="consecuencia" />
+              <Mapping SourceColumn="irc" DataSetColumn="irc" />
+              <Mapping SourceColumn="criticidad" DataSetColumn="criticidad" />
+              <Mapping SourceColumn="detalle" DataSetColumn="detalle" />
+              <Mapping SourceColumn="codigo" DataSetColumn="codigo" />
+              <Mapping SourceColumn="contenido" DataSetColumn="contenido" />
+              <Mapping SourceColumn="work_order" DataSetColumn="work_order" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReportHallazgos" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ReportHallazgos" msprop:Generator_UserDSName="ReportHallazgos">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Evento" msprop:Generator_TableClassName="EventoDataTable" msprop:Generator_TableVarName="tableEvento" msprop:Generator_TablePropName="Evento" msprop:Generator_RowDeletingName="EventoRowDeleting" msprop:Generator_RowChangingName="EventoRowChanging" msprop:Generator_RowEvHandlerName="EventoRowChangeEventHandler" msprop:Generator_RowDeletedName="EventoRowDeleted" msprop:Generator_UserTableName="Evento" msprop:Generator_RowChangedName="EventoRowChanged" msprop:Generator_RowEvArgName="EventoRowChangeEvent" msprop:Generator_RowClassName="EventoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha_ingreso" msprop:Generator_ColumnVarNameInTable="columnfecha_ingreso" msprop:Generator_ColumnPropNameInRow="fecha_ingreso" msprop:Generator_ColumnPropNameInTable="fecha_ingresoColumn" msprop:Generator_UserColumnName="fecha_ingreso" type="xs:dateTime" />
+              <xs:element name="nombre_area" msprop:Generator_ColumnVarNameInTable="columnnombre_area" msprop:Generator_ColumnPropNameInRow="nombre_area" msprop:Generator_ColumnPropNameInTable="nombre_areaColumn" msprop:Generator_UserColumnName="nombre_area" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_subarea" msprop:Generator_ColumnVarNameInTable="columnnombre_subarea" msprop:Generator_ColumnPropNameInRow="nombre_subarea" msprop:Generator_ColumnPropNameInTable="nombre_subareaColumn" msprop:Generator_UserColumnName="nombre_subarea" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_tipoequipo" msprop:Generator_ColumnVarNameInTable="columnnombre_tipoequipo" msprop:Generator_ColumnPropNameInRow="nombre_tipoequipo" msprop:Generator_ColumnPropNameInTable="nombre_tipoequipoColumn" msprop:Generator_UserColumnName="nombre_tipoequipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="modelo_equipo" msprop:Generator_ColumnVarNameInTable="columnmodelo_equipo" msprop:Generator_ColumnPropNameInRow="modelo_equipo" msprop:Generator_ColumnPropNameInTable="modelo_equipoColumn" msprop:Generator_UserColumnName="modelo_equipo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serie_equipo" msprop:Generator_ColumnVarNameInTable="columnserie_equipo" msprop:Generator_ColumnPropNameInRow="serie_equipo" msprop:Generator_ColumnPropNameInTable="serie_equipoColumn" msprop:Generator_UserColumnName="serie_equipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_clasificacion" msprop:Generator_ColumnVarNameInTable="columnnombre_clasificacion" msprop:Generator_ColumnPropNameInRow="nombre_clasificacion" msprop:Generator_ColumnPropNameInTable="nombre_clasificacionColumn" msprop:Generator_UserColumnName="nombre_clasificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_subclasificacion" msprop:Generator_ColumnVarNameInTable="columnnombre_subclasificacion" msprop:Generator_ColumnPropNameInRow="nombre_subclasificacion" msprop:Generator_ColumnPropNameInTable="nombre_subclasificacionColumn" msprop:Generator_UserColumnName="nombre_subclasificacion">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_sistema" msprop:Generator_ColumnVarNameInTable="columnnombre_sistema" msprop:Generator_ColumnPropNameInRow="nombre_sistema" msprop:Generator_ColumnPropNameInTable="nombre_sistemaColumn" msprop:Generator_UserColumnName="nombre_sistema">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_subsistema" msprop:Generator_ColumnVarNameInTable="columnnombre_subsistema" msprop:Generator_ColumnPropNameInRow="nombre_subsistema" msprop:Generator_ColumnPropNameInTable="nombre_subsistemaColumn" msprop:Generator_UserColumnName="nombre_subsistema">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre_componente" msprop:Generator_ColumnVarNameInTable="columnnombre_componente" msprop:Generator_ColumnPropNameInRow="nombre_componente" msprop:Generator_ColumnPropNameInTable="nombre_componenteColumn" msprop:Generator_UserColumnName="nombre_componente">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="serie_componente" msprop:Generator_ColumnVarNameInTable="columnserie_componente" msprop:Generator_ColumnPropNameInRow="serie_componente" msprop:Generator_ColumnPropNameInTable="serie_componenteColumn" msprop:Generator_UserColumnName="serie_componente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="agente_corrector" msprop:Generator_ColumnVarNameInTable="columnagente_corrector" msprop:Generator_ColumnPropNameInRow="agente_corrector" msprop:Generator_ColumnPropNameInTable="agente_correctorColumn" msprop:Generator_UserColumnName="agente_corrector" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="probabilidad" msprop:Generator_ColumnVarNameInTable="columnprobabilidad" msprop:Generator_ColumnPropNameInRow="probabilidad" msprop:Generator_ColumnPropNameInTable="probabilidadColumn" msprop:Generator_UserColumnName="probabilidad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="consecuencia" msprop:Generator_ColumnVarNameInTable="columnconsecuencia" msprop:Generator_ColumnPropNameInRow="consecuencia" msprop:Generator_ColumnPropNameInTable="consecuenciaColumn" msprop:Generator_UserColumnName="consecuencia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="irc" msprop:Generator_ColumnVarNameInTable="columnirc" msprop:Generator_ColumnPropNameInRow="irc" msprop:Generator_ColumnPropNameInTable="ircColumn" msprop:Generator_UserColumnName="irc" type="xs:decimal" minOccurs="0" />
+              <xs:element name="criticidad" msprop:Generator_ColumnVarNameInTable="columncriticidad" msprop:Generator_ColumnPropNameInRow="criticidad" msprop:Generator_ColumnPropNameInTable="criticidadColumn" msprop:Generator_UserColumnName="criticidad" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="70" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="detalle" msprop:Generator_ColumnVarNameInTable="columndetalle" msprop:Generator_ColumnPropNameInRow="detalle" msprop:Generator_ColumnPropNameInTable="detalleColumn" msprop:Generator_UserColumnName="detalle">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="3000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="codigo" msprop:Generator_ColumnVarNameInTable="columncodigo" msprop:Generator_ColumnPropNameInRow="codigo" msprop:Generator_ColumnPropNameInTable="codigoColumn" msprop:Generator_UserColumnName="codigo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="contenido" msprop:Generator_ColumnVarNameInTable="columncontenido" msprop:Generator_ColumnPropNameInRow="contenido" msprop:Generator_ColumnPropNameInTable="contenidoColumn" msprop:Generator_UserColumnName="contenido" type="xs:base64Binary" />
+              <xs:element name="work_order" msprop:Generator_ColumnVarNameInTable="columnwork_order" msprop:Generator_ColumnPropNameInRow="work_order" msprop:Generator_ColumnPropNameInTable="work_orderColumn" msprop:Generator_UserColumnName="work_order">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Evento" />
+      <xs:field xpath="mstns:codigo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

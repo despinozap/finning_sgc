@@ -1,0 +1,582 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{
+    background: #b6b7bc;
+    font-size: .75em;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #696969;
+    background-repeat: repeat;
+}
+
+a:link, a:visited
+{
+    color: #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom: 10px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    /*width: 960px;*/
+    width: 96%; /*background-color:#F6F6F6;*/
+    background-color: #EEEEEE;
+    margin: 20px auto 0px auto;
+    border: 1px solid #666666;
+}
+
+.header
+{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background: #000000;
+    width: 100%;
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #f9f9f9;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+}
+
+.main
+{
+    padding: 0px 12px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #EFEFEF;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    background-color: #4B4B4B;
+    width: 100%; /*background-image: url('/Images/barra.PNG');*/
+    background-repeat: repeat-x;
+    background-size: contain;
+    padding: 5px 0px 10px 0px;
+}
+
+div.menu
+{
+    margin: 10px 0px 4px 8px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #333333;
+    border: 1px solid #000000;
+    color: #FFFFFF;
+    display: block;
+    line-height: 1.35em;
+    padding: 4px 20px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #666666;
+    color: #FFCC00;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: #666666;
+    color: #cfdbe6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline
+{
+    display: inline;
+}
+
+legend
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: white;
+}
+
+.loginDisplay a:visited
+{
+    color: white;
+}
+
+.loginDisplay a:hover
+{
+    color: white;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+
+/* CONTROLES PROPIOS 
+----------------------------------------------------------*/
+.submitButton
+{
+    background-color: #000000;
+    padding: 8px 8px 8px 8px;
+    color: #FFFFFF;
+    font-size: 14px;
+    border: 0px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.submitButton:hover
+{
+    background-color: #333333;
+}
+
+.submitButton:active
+{
+    background-color: #000000;
+}
+
+
+.submitPanelButton
+{
+    background-color: #000000;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+.submitPanelButton:hover
+{
+    background-color: #FFCC00;
+}
+
+.submitPanelButton:active
+{
+    background-color: #000000;
+}
+
+
+.submitAttachFile
+{
+    background-color: #003300;
+    color: #FFFFFF;
+    border-radius: 5px;
+}
+
+
+.submitAttachFile:hover
+{
+    background-color: #006600;
+}
+
+
+.submitAttachFile:active
+{
+    background-color: #003300;
+}
+
+
+.messageBoxTitle
+{
+    font-size: 16px;
+}
+
+.messageBoxMessage
+{
+    font-size: 14px;
+}
+
+.Loading_Background
+{
+    /*     background-color: Gray;     filter: alpha(opacity=95);     opacity: 0.95;     */
+    background-color: #FFFFFF;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    height: 100%;
+}
+
+.Loading_Panel
+{
+    margin: auto;
+    font-family: Trebuchet MS;
+    background-color: #FFFFFF;
+    filter: alpha(opacity=100);
+    opacity: 1;
+    vertical-align: middle;
+    top: 0px;
+    position: relative;
+    right: 0px;
+    height: 183px;
+}
+
+
+.divTituloForm
+{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    background-position: 0px; /*width: 100%;*/
+    text-align: center; /*background-image: url('/Images/titulo_form.png');*/
+    color: #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.tdUsuario
+{
+    /*background-image: url('/Images/Texture/User/1.jpg');*/
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.btLogout
+{
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+
+/*TABLE AND CONTAINERS
+***********************************/
+.tableControls
+{
+    border-spacing: 0px;
+    border-collapse: separate;
+    text-align: left;
+}
+
+.tableControls tr td
+{
+    padding: 5px 10px 5px 10px;
+}
+
+
+.tableControls tr .tdTitle
+{
+    padding: 1px;
+    text-align: center;
+    background-color: #FFCC00;
+    color: #000000;
+    font-weight: bolder;
+}
+
+
+.tableControls tr .tdUnique
+{
+    border-top-color: #FFFFFF;
+    border-top-style: ridge;
+    border-top-width: thin;
+    border-bottom-color: #DDDDDD;
+    border-bottom-style: ridge;
+    border-bottom-width: thin;
+}
+
+.tableControls tr .tdFirst
+{
+    border-top-color: #FFFFFF;
+    border-top-style: ridge;
+    border-top-width: thin;
+}
+
+
+.tableControls tr .tdLast
+{
+    border-bottom-color: #DDDDDD;
+    border-bottom-style: ridge;
+    border-bottom-width: thin;
+}
+
+
+.rowData
+{
+    background-color: #FFFFFF;
+}
+
+.rowData:hover
+{
+    background-color: #FFCC00;
+    color: #000000;
+}
+
+.rowDataAlt
+{
+    background-color: #E4E4E4;
+}
+
+.rowDataAlt:hover
+{
+    background-color: #FFCC00;
+    color: #000000;
+}
+
+
+/*MESSAGE BOX ALERTS
+--------------------------------------------------------*/
+.alert
+{
+    padding: 19px 15px;
+    color: #fefefe;
+    position: relative;
+    font: 14px/20px Museo300Regular, Helvetica, Arial, sans-serif;
+}
+
+.alert .msg
+{
+    padding: 0 20px 0 40px;
+}
+
+.alert p
+{
+    margin: 0;
+}
+
+.alert .toggle-alert
+{
+    position: absolute;
+    top: 7px;
+    right: 10px;
+    display: block;
+    text-indent: -10000px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    -webkit-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(255, 255, 255, 0.1);
+    -moz-box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(255, 255, 255, 0.1);
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1), 1px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.info-box
+{
+}
+
+.success-box
+{
+}
+
+.error-box
+{
+}
+
+.warning-box
+{
+}
+
+.upload-box
+{
+}
+
+.download-box
+{
+}
+
+
+/* Datepicker
+**********************************************/
+.ui-datepicker-next
+{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    line-height: 600%;
+    overflow: hidden;
+}
+
+.ui-datepicker-prev
+{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    line-height: 600%;
+    overflow: hidden;
+}
